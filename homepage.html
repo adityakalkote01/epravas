@@ -1,0 +1,195 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" , initial-scale="1">
+    <title>E-pravas</title>
+    <!--custom css links-->
+    <!--boxicons links-->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <!--remxiconslinks-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!--google fonts links-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,900&family=Poppins:ital,wght@1,300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="homepage.css">
+    <style>
+        .item1 {
+            grid-area: from;
+        }
+
+        .item2 {
+            grid-area: switch;
+        }
+
+        .item3 {
+            grid-area: to;
+        }
+
+        .item4 {
+            grid-area: date;
+        }
+
+        .item5 {
+            grid-area: time;
+        }
+
+        .item6 {
+            grid-area: search;
+        }
+
+        .cta {
+            display: grid;
+            grid-template-areas: 'from switch to date time search';
+
+            padding: 10px;
+            margin-top: 20px;
+
+            width: 1200px;
+            height: 20px;
+            word-spacing: 10px;
+        }
+
+        .cta>div {
+            padding: 20px 0;
+            font-size: 20px;
+            background-color: aliceblue;
+            border-radius: 2px;
+        }
+
+        .search {
+            color: aqua;
+            background-color: black;
+
+        }
+
+        .switchdata {
+            color: grey;
+
+            margin-top: 50px;
+            font-size: 25px;
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            margin-left: 20px;
+            border-radius: 20%;
+        }
+
+        .customlabel {
+            color: black;
+            font-size: 20px;
+            font-family: sans-serif;
+        }
+
+        .heading {
+            width: 350px;
+            height: 10px;
+            position: absolute;
+            top: 50%;
+            /* Move the top of the div to the middle of its parent container */
+            left: 50%;
+            /* Move the left of the div to the middle of its parent container */
+            transform: translate(-50%, -50%);
+
+            margin-top: 80px;
+        }
+
+        .heading h1 {
+            color: black;
+            font-size: 30px;
+            font-family: sans-serif;
+
+        }
+
+        .video {
+            width: 500px;
+            height: 100px;
+            background-color: black;
+
+            top: 10px;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo">E-Pravas</a>
+        <ul class="nav-list">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Aboutus</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contactus</a></li>
+            <li><a href="#">Register/Login</a></li>
+        </ul>
+        <div class="bx bx-menu" id="menu-icon"></div>
+
+    </header>
+    <div class="hero">
+        <div class="video">
+            <!--<video id="my-video" autoplay muted loop>
+            <source type="video/mp4" src="busbooking.mp4" controls="" />
+        </video>-->
+        </div>
+        <div class="heading">
+
+            <h1 align="center"><i class=" fa fa-bus"></i>Book Your Bus</h1>
+
+        </div>
+        <div class="cta">
+            <div class="from item1">
+                <i class=" fa fa-bus"></i>
+                <label for="pickup" class="customlabel">From:-</label>
+                <input type="text" name="pickup" id="input1" placeholder="Leaving From">
+            </div>
+            <div class="switch item2"> <a onclick="switchData()" class="switchdata">
+
+                    <i class="fa fa-exchange" aria-hidden="true"></i>
+
+                </a></div>
+
+            <div class="to item3">
+                <i class="fa fa-arrow"></i>
+                <label for="drop" class="customlabel">To:-</label>
+                <input type="text" name="drop" id="input2" placeholder="Going To">
+
+            </div>
+
+            <div class="date item4">
+                <i class="fa calender"></i>
+                <label for="date" class="customlabel">Date:-</label>
+                <input type="date" name="date" id="">
+
+            </div>
+            <div class="time item5">
+                <i class="fa calender"></i>
+                <label for="time" class="customlabel">Time:-</label>
+                <input type="time" name="time" id="">
+
+            </div>
+
+            <div class="search item6"> <a onclick="search()">
+                    <button class="search">Search</button>
+                </a>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+<script>
+    function switchData() {
+        var input1Value = document.getElementById('input1').value;
+        var input2Value = document.getElementById('input2').value;
+
+        document.getElementById('input1').value = input2Value;
+        document.getElementById('input2').value = input1Value;
+    }
+</script>
+
+</html>
